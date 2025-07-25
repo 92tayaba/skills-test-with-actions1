@@ -1,4 +1,3 @@
-# System Modules
 import sys
 import os
 
@@ -8,35 +7,38 @@ from calculations import area_of_circle, get_nth_fibonacci  # noqa: E402
 
 
 def test_area_of_circle_positive_radius():
-    """Test with a positive radius."""
     radius = 1
     result = area_of_circle(radius)
     assert abs(result - 3.14159) < 1e-5
 
 
 def test_area_of_circle_zero_radius():
-    """Test with a radius of zero."""
     radius = 0
     result = area_of_circle(radius)
     assert result == 0
 
 
+def test_area_of_circle_negative_radius():
+    radius = -5
+    result = area_of_circle(radius)
+    assert result == 0  # We now cover the negative input path
+
+
 def test_get_nth_fibonacci_zero():
-    """Test with n=0."""
-    n = 0
-    result = get_nth_fibonacci(n)
+    result = get_nth_fibonacci(0)
     assert result == 0
 
 
 def test_get_nth_fibonacci_one():
-    """Test with n=1."""
-    n = 1
-    result = get_nth_fibonacci(n)
+    result = get_nth_fibonacci(1)
     assert result == 1
 
 
 def test_get_nth_fibonacci_ten():
-    """Test with n=10."""
-    n = 10
-    result = get_nth_fibonacci(n)
-    assert result == 89
+    result = get_nth_fibonacci(10)
+    assert result == 55  # Correct value
+
+
+def test_get_nth_fibonacci_negative():
+    result = get_nth_fibonacci(-3)
+    assert result == 0  # Now covers the negative input path
