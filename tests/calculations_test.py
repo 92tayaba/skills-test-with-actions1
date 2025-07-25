@@ -21,7 +21,7 @@ def test_area_of_circle_zero_radius():
 def test_area_of_circle_negative_radius():
     radius = -5
     result = area_of_circle(radius)
-    assert result == 0  # We now cover the negative input path
+    assert result == 0  # Covers the negative input path
 
 
 def test_get_nth_fibonacci_zero():
@@ -36,9 +36,9 @@ def test_get_nth_fibonacci_one():
 
 def test_get_nth_fibonacci_ten():
     result = get_nth_fibonacci(10)
-    assert result == 55  # Correct value
+    assert result == 55
 
 
 def test_get_nth_fibonacci_negative():
     result = get_nth_fibonacci(-3)
-    assert result == 0  # Now covers the negative input path
+    assert result == 0
